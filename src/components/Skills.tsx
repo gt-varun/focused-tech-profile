@@ -46,8 +46,8 @@ const Skills = () => {
   ];
 
   return (
-    <section id="skills" className="py-20 bg-muted/20">
-      <div className="container mx-auto px-4">
+    <section id="skills" className="py-20 bg-muted/20 relative overflow-hidden">
+      <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
             Skills & Expertise
@@ -59,17 +59,17 @@ const Skills = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 mb-12">
           {skillCategories.map((category, index) => (
-            <Card key={index} className="h-full hover:shadow-lg transition-shadow duration-300">
+            <Card key={index} className="h-full hover:shadow-xl transition-all duration-300 hover:scale-105 hover:-translate-y-2 group">
               <CardHeader>
-                <CardTitle className="flex items-center gap-3 text-xl">
-                  <span className="text-2xl">{category.icon}</span>
+                <CardTitle className="flex items-center gap-3 text-xl group-hover:text-primary transition-colors duration-300">
+                  <span className="text-2xl group-hover:scale-110 transition-transform duration-300">{category.icon}</span>
                   {category.title}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill) => (
-                    <Badge key={skill} variant="secondary" className="hover:bg-primary hover:text-primary-foreground transition-colors cursor-default">
+                    <Badge key={skill} variant="secondary" className="hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default hover:scale-105">
                       {skill}
                     </Badge>
                   ))}
@@ -79,7 +79,7 @@ const Skills = () => {
           ))}
         </div>
 
-        <Card className="max-w-md mx-auto">
+        <Card className="max-w-md mx-auto hover:shadow-xl transition-all duration-300 hover:scale-105">
           <CardHeader>
             <CardTitle className="flex items-center gap-3 text-xl">
               <span className="text-2xl">🌍</span>
@@ -89,9 +89,9 @@ const Skills = () => {
           <CardContent>
             <div className="space-y-3">
               {languages.map((language) => (
-                <div key={language.name} className="flex justify-between items-center">
+                <div key={language.name} className="flex justify-between items-center hover:bg-muted/50 p-2 rounded transition-colors duration-300">
                   <span className="font-medium">{language.name}</span>
-                  <Badge variant="outline">{language.level}</Badge>
+                  <Badge variant="outline" className="hover:bg-primary hover:text-primary-foreground transition-colors duration-300">{language.level}</Badge>
                 </div>
               ))}
             </div>
