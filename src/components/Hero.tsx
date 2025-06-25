@@ -24,7 +24,7 @@ const Hero = () => {
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent leading-tight hover:scale-105 transition-transform duration-300">
-            John Smith
+            Varun Y R
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground mb-4">
